@@ -1,0 +1,114 @@
+@import '@/assets/scss/_mixins';
+
+.howTo {
+  display: flex;
+  flex-direction: column;
+
+  &__descWrapper {
+    padding: 0 0 120px;
+  }
+
+  &__desktop {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 112px;
+  }
+
+  &__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  &__item {
+    @include textStyle($fw: 700, $fsz: 64px, $lht: 78px, $color: #343045);
+
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    outline: 20px solid #0d0d0d52;
+    border-radius: 50%;
+    padding: 45px;
+    background: linear-gradient(251.27deg, #c0b7e8 12.87%, #8176af 89.33%);
+
+    @include response(desktop) {
+      padding: 35px;
+    }
+  }
+
+  &__titleBlock {
+    display: flex;
+    padding: 25px 0 0;
+    gap: 16px;
+
+    @include response(tablet) {
+      padding: 35px 0 0;
+    }
+  }
+
+  &__arrowWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 24px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 24px, $lht: 29px, $color: #fff);
+  }
+
+  &__mobile {
+    padding: 0 0 112px;
+  }
+
+  &__vector {
+    @include vector;
+
+    position: absolute;
+    left: -84px;
+    top: 0;
+    width: 1440px;
+  }
+
+  &__vectorImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__btnsWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__prev {
+    @include slideBtn(url('@/assets/svgs/iconPrev.svg'));
+
+    left: -32px;
+  }
+
+  &__next {
+    @include slideBtn(url('@/assets/svgs/iconNext.svg'));
+
+    right: -32px;
+  }
+
+  @include response(desktop) {
+    padding: 0 35px;
+  }
+}

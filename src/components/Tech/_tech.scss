@@ -1,0 +1,134 @@
+@import '@/assets/scss/_mixins';
+
+.tech {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 114px 0 123px;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 160px;
+    height: 303px;
+    // max-width: 1278px;
+    box-shadow: 0 4px 4px rgba(192, 183, 232, 0.01);
+    background: url('@/assets/img/technologiesBg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 11px;
+
+    @include response(phone) {
+      background: url('@/assets/img/technologiesBgMobile.png');
+      height: 163px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+    @include titleDescr($fw: 700);
+
+    @include response(phone) {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__subTitle {
+    @include titleDescr($fw: 300, $color: #fffffff2);
+
+    font-weight: 300;
+
+    @include response(phone) {
+      text-align: center;
+			font-size: 24px;
+			line-height: 29px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: -50px;
+    border: 15px solid #0e0e0e;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+
+    &::after {
+      content: url('@/assets/svgs/iconBottom.svg');
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 14px 0 70px;
+
+    @include response(desktop) {
+      padding: 45px 14px 0;
+    }
+  }
+
+  &__imgWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 282px;
+
+    @include response(desktop) {
+      max-width: 200px;
+    }
+
+    @include response(phone) {
+      max-width: 256px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__btnsWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__prev {
+    @include slideBtn(url('@/assets/svgs/iconPrev.svg'));
+    
+    left: -32px;
+  }
+
+  &__next {
+    @include slideBtn(url('@/assets/svgs/iconNext.svg'));
+
+    right: -32px;
+  }
+
+	@media (max-width: 1024px) {
+		padding: 0 35px;
+	}
+}

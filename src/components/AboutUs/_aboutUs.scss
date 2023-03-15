@@ -1,0 +1,130 @@
+@import '@/assets/scss/_mixins';
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+
+  &__descWrapper {
+    padding: 90px 0 104px;
+
+    @include response(tablet) {
+      padding: 70px 0 50px;
+    }
+
+    @include response(phone) {
+      padding: 59px 0 38px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    gap: 75px;
+
+    @include response(tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 51px;
+    }
+  }
+
+  &__imgWrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: fit-content;
+    min-width: 450px;
+    max-width: 546px;
+
+    @include response(tablet) {
+      min-width: unset;
+      max-width: 450px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 0 0;
+    max-width: 630px;
+
+    @include response(tablet) {
+      align-items: center;
+      max-width: unset;
+    }
+  }
+
+  &__title {
+    @include titleDescr($fw: 700);
+
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__subTitle {
+    @include titleDescr($fw: 300, $color: #fffffff2);
+
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include textStyle;
+
+    padding: 42px 0 28px;
+
+    @include response(phone) {
+      padding: 0 0 28px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__btn {
+    @include btnStyles(17px 43px);
+  }
+
+  &__vectorSeven {
+    position: absolute;
+    left: -176px;
+    top: 18px;
+    width: 100%;
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__vectorEignt {
+    position: absolute;
+    left: -163px;
+    top: 300px;
+    width: 100%;
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__vectorImg {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include response(desktop) {
+    padding: 0 40px;
+  }
+
+  @include response(phone) {
+    padding: 0 25px;
+  }
+}

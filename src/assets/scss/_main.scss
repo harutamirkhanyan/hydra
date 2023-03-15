@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  overflow: hidden;
+  width: 100%;
+  background: #302c42;
+}
+
+.hyContent {
+  margin: 0 auto;
+  padding: 0 84px;
+  width: 100%;
+  max-width: 1440px;
+
+  @media (max-width: 1240px) {
+    padding: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}

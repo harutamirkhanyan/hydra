@@ -1,0 +1,129 @@
+@import '@/assets/scss/_mixins';
+
+.servicesSection {
+  display: flex;
+  flex-direction: column;
+
+  &__descWrapper {
+    padding: 111px 0 107px;
+
+    @include response(tablet) {
+      padding: 70px 0 65px;
+    }
+
+    @include response(phone) {
+      padding: 60px 0 26px;
+    }
+  }
+
+  &__desktop {
+    position: relative;
+  }
+
+  &__carousel {
+    display: flex;
+    gap: 11px;
+  }
+
+  &__slide {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 23px 35px 40px 25px;
+    background: radial-gradient(50% 50% at 50% 50%, #433d60 0%, #211e2e 100%);
+    border-radius: 40px;
+  }
+
+  &__imgBg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    width: 100%;
+    height: fit-content;
+    max-width: 190px;
+    border-radius: 50%;
+    background: url('@/assets/img/servicesEllipse.png') no-repeat center/cover;
+  }
+
+  &__imgWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 190px;
+    border-radius: 50%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    max-width: 190px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 24px, $lht: 29px, $color: #fff);
+    color: #fff;
+    padding: 18px 0 21px;
+    border-bottom: 1px solid rgba(192, 183, 232, 0.33);
+  }
+
+  &__text {
+    @include textStyle($fw: 400, $fsz: 12px, $lht: 15px, $color: #fff);
+    padding: 22px 0 35px;
+  }
+
+  &__btn {
+    @include btnStyles(16px 39px);
+  }
+
+  &__vector {
+    @include vector;
+    top: 64px;
+  }
+
+  .carousel__slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btnsWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__prev,
+  &__next {
+    background: unset;
+    border: unset;
+  }
+
+  &__prev {
+    @include slideBtn(url('@/assets/svgs/iconPrev.svg'));
+    
+    left: -32px;
+  }
+
+  &__next {
+    @include slideBtn(url('@/assets/svgs/iconNext.svg'));
+    
+    right: -32px;
+  }
+
+  @include response(desktop) {
+    padding: 0 35px 98px;
+  }
+
+  @include response(phone) {
+    padding: 0 35px 54px;
+  }
+}

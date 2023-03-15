@@ -1,0 +1,95 @@
+@mixin titleDescr($fw, $color: #fff) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $fw;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $color;
+
+  @include response(phone) {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+@mixin textStyle($fw: 400, $fsz: 16px, $lht: 25px, $color: #fff) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $fw;
+  font-style: normal;
+  font-size: $fsz;
+  line-height: $lht;
+  color: $color;
+}
+
+@mixin btnStyles($padding) {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  padding: $padding;
+  max-width: fit-content;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #343045;
+  background: linear-gradient(90deg, #8176af 0%, #c0b7e8 100%);
+  cursor: pointer;
+
+  @include response(phone) {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
+
+@mixin vector {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: fit-content;
+}
+
+@mixin slideBtn($url) {
+  position: relative;
+  border: 9px solid #0e0e0e;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  background: linear-gradient(267.61deg, #c0b7e8 -0.6%, #8176af 98.31%);
+
+  &::after {
+    content: $url;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin response($gadget) {
+  @if $gadget == desktop {
+    @media screen and (max-width: 1240px) {
+      @content;
+    }
+  } @else if $gadget==tablet {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $gadget==phone {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $gadget==phoneMini {
+    @media screen and (max-width: 540px) {
+      @content;
+    }
+  }
+}

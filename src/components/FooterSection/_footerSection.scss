@@ -1,0 +1,176 @@
+@import '@/assets/scss/_mixins';
+
+.footerSection {
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+    border-image: url('@/assets/svgs/footerBorder.svg') 1 round;
+    padding: 0 0 81px;
+
+    @include response(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: fit-content;
+    max-width: 185px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__navOne {
+    border-left: 2px solid transparent;
+    border-image: linear-gradient(
+        to bottom,
+        rgba(52, 48, 69, 1),
+        rgba(192, 183, 232, 1),
+        rgba(129, 118, 175, 1),
+        rgba(52, 48, 69, 1)
+      )
+      10;
+    padding: 0 0 0 81px;
+
+    @include response(desktop) {
+      padding: 0 0 0 20px;
+    }
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__navTwo {
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-image: linear-gradient(
+        to bottom,
+        rgba(52, 48, 69, 1),
+        rgba(192, 183, 232, 1),
+        rgba(129, 118, 175, 1),
+        rgba(52, 48, 69, 1)
+      )
+      10;
+    padding: 0 107px 0 69px;
+
+    @include response(desktop) {
+      padding: 0 20px;
+    }
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__navItem {
+    @include textStyle($fw: 700, $fsz: 16px, $lht: 20px, $color: #fff);
+
+    list-style: none;
+    padding: 0 0 24px;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+
+    @include response(tablet) {
+      align-items: center;
+    }
+  }
+
+  &__socialDesc {
+    @include textStyle($fw: 700, $fsz: 16px, $lht: 20px, $color: #fff);
+
+    padding: 0 0 39px;
+  }
+
+  &__socialLogos {
+    display: flex;
+    padding: 0 0 49px;
+    gap: 20px;
+  }
+
+  &__socialItem {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__socialImg {
+    width: 100%;
+    height: fit-content;
+    max-width: 32px;
+  }
+
+  &__btn {
+    @include btnStyles(17px 40px);
+  }
+
+  &__vectorOne {
+    position: absolute;
+    top: -317px;
+    width: 100%;
+
+    @include response(tablet) {
+      top: -81px;
+    }
+  }
+
+  &__vectorTwo {
+    position: absolute;
+    top: -38px;
+    width: 100%;
+
+    @include response(tablet) {
+      top: 71px;
+    }
+  }
+
+  &__vectorImg {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__copyright {
+    @include textStyle($fw: 700, $fsz: 14px, $lht: 17px, $color: #fff);
+
+    padding: 49px 0 59px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  &__copyrightText {
+    display: block;
+
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__copyrightMobile {
+    display: none;
+
+    @include response(phone) {
+      display: block;
+    }
+  }
+
+  @include response(desktop) {
+    padding: 0 84px;
+
+  }
+  @include response(tablet) {
+    padding: 0 49px;
+  }
+}

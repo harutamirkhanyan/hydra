@@ -1,0 +1,68 @@
+@import '@/assets/scss/_mixins';
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 47px;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+  }
+
+  &__title {
+    @include titleDescr($fw: 700);
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__subTitle {
+    @include titleDescr($fw: 300, $color: #fffffff2);
+
+    font-weight: 300;
+  }
+
+  &__arrowWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 228px;
+
+    @include response(desktop) {
+      max-width: 100px;
+    }
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__right {
+    width: fit-content;
+    max-width: 652px;
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include textStyle;
+  }
+
+  @include response(tablet) {
+    justify-content: center;
+  }
+}

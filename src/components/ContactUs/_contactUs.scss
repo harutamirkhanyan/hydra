@@ -1,0 +1,223 @@
+@import '@/assets/scss/_mixins';
+
+.contactUs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 88px;
+  gap: 30px;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 0;
+    max-width: 450px;
+
+    @include response(desktop) {
+      align-items: center;
+    }
+    
+    @include response(tablet) {
+      max-width: unset;
+      order: 2;
+    }
+
+    @include response(phoneMini) {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 46px, $lht: 56px, $color: #fff);
+
+    position: relative;
+    z-index: 10;
+    padding: 0 0 36px;
+    white-space: nowrap;
+    background: linear-gradient(91.57deg, #c0b7e8 -1.02%, #8176af 36.25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include response(desktop) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include response(phoneMini) {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  &__titleText {
+    font-size: 40px;
+    line-height: 49px;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include response(desktop) {
+      font-size: 35px;
+      line-height: 45px;
+    }
+
+    @include response(phoneMini) {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  &__text {
+    @include textStyle;
+
+    padding-bottom: 66px;
+
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include response(phone) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    @include btnStyles(16px 41px);
+  }
+
+  &__arrowWrapper {
+    width: 100%;
+    height: fit-content;
+    max-width: 40px;
+
+    @include response(phoneMini) {
+      display: none;
+    }
+  }
+
+  &__arrowLogo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__right {
+    position: relative;
+    max-width: 524px;
+
+    @include response(phone) {
+      max-width: 340px;
+    }
+  }
+
+  &__frameWrapper {
+    position: relative;
+    max-width: 524px;
+
+    @include response(phone) {
+      max-width: 340px;
+    }
+  }
+
+  &__frame {
+    width: 100%;
+  }
+
+  &__imgWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+  }
+
+  &__img {
+    max-width: 500px;
+
+    @include response(phone) {
+      max-width: 310px;
+    }
+  }
+
+  &__vectorOne {
+    @include vector;
+
+    right: -84px;
+    top: -88px;
+    max-width: 414px;
+
+    @include response(desktop) {
+      right: 0;
+    }
+
+    @include response(phone) {
+      right: -50px;
+      top: -57px;
+    }
+  }
+
+  &__vectorTwo {
+    @include vector;
+
+    right: 48px;
+    top: -251px;
+    max-width: 377px;
+
+    @include response(phone) {
+      right: -25px;
+      top: -160px;
+    }
+  }
+
+  &__vectorThree {
+    @include vector;
+
+    right: -84px;
+    top: 163px;
+    max-width: 735px;
+
+    @include response(desktop) {
+      right: 0;
+    }
+
+    @include response(phone) {
+      right: -64px;
+      top: 152px;
+    }
+  }
+
+  &__vectorFour {
+    position: absolute;
+    left: -84px;
+    top: 0;
+
+    @include response(desktop) {
+      display: none;
+    }
+
+    @include response(phone) {
+      right: 0;
+    }
+  }
+
+  &__vectorImg {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include response(desktop) {
+    align-items: center;
+    padding: 0 40px 88px;
+  }
+
+  @include response(tablet) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

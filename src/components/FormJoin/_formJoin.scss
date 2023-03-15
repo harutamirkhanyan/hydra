@@ -1,0 +1,133 @@
+@import '@/assets/scss/_mixins';
+
+.formJoin {
+  padding: 0 0 127px;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background: radial-gradient(50% 50% at 50% 50%, #403a5f 0%, #211e2e 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    padding: 90px 108px 84px;
+
+    @include response(tablet) {
+      padding: 90px 50px 84px;
+    }
+
+    @include response(phone) {
+      padding: 45px 22px 65px;
+    }
+  }
+
+  &__title {
+    @include textStyle($fw: 700, $fsz: 36px, $lht: 44px, $color: #fff);
+
+    text-align: center;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 414px;
+    padding: 30px 0 21px;
+
+    @include response(phone) {
+      padding: 21px 0 19px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__descr {
+    @include textStyle($fw: 300, $fsz: 36px, $lht: 44px, $color: #fff);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+
+    @include response(phone) {
+      flex-direction: column;
+      gap: 22px;
+    }
+  }
+
+  &__wrapperOne {
+    padding: 65px 0 39px;
+
+    @include response(phone) {
+      padding: 36px 0 22px;
+    }
+  }
+
+  &__wrapperThree {
+    padding: 33px 0;
+
+    @include response(phone) {
+      padding: 22px 0;
+    }
+  }
+
+  input.formJoin__sbj {
+    width: 100%;
+  }
+
+  input {
+    width: 50%;
+    height: 72px;
+    padding: 0 42px 0;
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 40px;
+    outline: none;
+    background-color: unset;
+
+    &::placeholder {
+      @include textStyle($fw: 400, $fsz: 14px, $lht: 17px, $color: #fff);
+    }
+
+    @include response(phone) {
+      width: 100%;
+    }
+  }
+
+  &__addText {
+    width: 100%;
+    height: 210px;
+    margin-bottom: 51px;
+    padding: 27px 42px;
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 40px;
+    outline: none;
+    background-color: unset;
+
+    &::placeholder {
+      @include textStyle($fw: 400, $fsz: 14px, $lht: 17px, $color: #fff);
+    }
+  }
+
+  &__submit {
+    @include btnStyles(17px 54px);
+  }
+
+  @include response(desktop) {
+    padding: 0 50px 100px;
+  }
+
+  @include response(phone) {
+    padding: 0 23px 81px;
+  }
+}
